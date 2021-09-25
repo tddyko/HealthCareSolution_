@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgound"
+    android:gravity="center"
+    android:focusable="true"
+	android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/main_tab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/colorWhite"
+            android:paddingTop="0dip">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.gchc.ing.component.CFontEditText
+                    android:id="@+id/et_search"
+                    style="@style/common_edittext_style"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="제목 검색이 가능합니다"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:maxLength="20"
+                    app:font="@string/KelsonSansRegular" />
+
+                <com.gchc.ing.component.CFontButton
+                    android:id="@+id/btn_search"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:background="@drawable/btn_confirm"
+                    android:text="검색"
+                    android:textSize="16dp"
+                    android:textColor="@color/colorWhite" />
+
+            </LinearLayout>
+
+            <com.gchc.ing.content.common.MyScrollView
+                android:id="@+id/scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/scrollLinear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/customerVoiceListViewtest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:orientation="vertical"
+                        android:visibility="gone"></LinearLayout>
+                </LinearLayout>
+            </com.gchc.ing.content.common.MyScrollView>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/kominhyuk/Project/lifecare-android/app/libs/pwb_android_sdk_release_1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a0331c1b48204b71397a79f760912c7ec7ba6df9">
+        <dex dex="/Users/kominhyuk/Project/lifecare-android/app/build/intermediates/transforms/dex/debug/folders/1000/2/pwb_android_sdk_release_1.0.0_b49feb7df6f794b798e833573f77a5d420274560/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kominhyuk/Project/lifecare-android/app/libs/android-async-http-1.4.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
+        <dex dex="/Users/kominhyuk/Project/lifecare-android/app/build/intermediates/transforms/dex/debug/folders/1000/2/android-async-http-1.4.9_4e144e779bf685e637b50f448459219c51c65a0c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kominhyuk/Project/lifecare-android/app/libs/json-simple-1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5e303a03d04e6788dddfa3655272580ae0fc13bb">
+        <dex dex="/Users/kominhyuk/Project/lifecare-android/app/build/intermediates/transforms/dex/debug/folders/1000/2/json-simple-1.1_587f91013dc328335783ae12ca0331f117a9ef4f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kominhyuk/Project/lifecare-android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6fd17a67418b8ec28c169186dd40f64aab867830">
+        <dex dex="/Users/kominhyuk/Project/lifecare-android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_e0bd1d14795efc62b15d5e6d52f6f40e6a5945f8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kominhyuk/Project/lifecare-android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/kominhyuk/Project/lifecare-android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_def767cb383774d5d705cf1e790088b76c15c292/classes.dex" />
+    </item>
+
+</items>

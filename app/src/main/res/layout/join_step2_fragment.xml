@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 회원가입 1/3-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/common_parent_style"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/relativeIdGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.gchc.ing.component.CFontEditText
+                android:id="@+id/joins_step2_id_edittext"
+                style="@style/common_edittext_style"
+                android:layout_width="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:hint="@string/join_step2_id_hint"
+                android:inputType="textEmailAddress"
+                android:maxLength="50" />
+
+            <ImageView
+                android:id="@+id/join_step2_id_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/join_step2_id_textview"
+            style="@style/member_textview_fields"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <com.gchc.ing.component.CFontTextView
+            android:id="@+id/join_step2_id_error_textview"
+            style="@style/common_textview_validate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/join_step2_id_info" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.gchc.ing.component.CFontEditText
+                android:id="@+id/join_step2_pwd_edittext0"
+                style="@style/common_edittext_style"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:hint="@string/join_step2_pwd_hint0"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+
+            <ImageView
+                android:id="@+id/join_step2_pwd_imageview0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <com.gchc.ing.component.CFontEditText
+                android:id="@+id/join_step2_pwd_edittext1"
+                style="@style/common_edittext_style"
+                android:layout_width="match_parent"
+                android:hint="@string/join_step2_pwd_hint1"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+
+            <ImageView
+                android:id="@+id/join_step2_pwd_imageview1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.gchc.ing.component.CFontEditText
+                android:id="@+id/join_step2_pwd_edittext2"
+                style="@style/common_edittext_style"
+                android:layout_width="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:hint="@string/join_step2_pwd_hint2"
+                android:inputType="textPassword"
+                android:maxLength="50"
+                android:maxLines="1" />
+
+            <ImageView
+                android:id="@+id/join_step2_pwd_imageview2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/join_step2_pwd_error_textview"
+            style="@style/common_textview_validate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="@string/join_step2_pwd_info" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <com.gchc.ing.component.CFontButton
+                android:id="@+id/next_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/button_on_off"
+                android:enabled="false"
+                android:text="@string/text_next"
+                android:textColor="@color/colorWhite"
+                app:font="@string/NotoSansKRBold" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

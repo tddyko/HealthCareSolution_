@@ -1,0 +1,92 @@
+<html>
+<head>
+<style type="text/css">
+	body {
+		background:#f2f2f2;
+		font-family: Arial, sans-serif;
+		font-size:16px;
+		color: #000000;
+		line-height: 150%;
+		padding: 10px;
+	}
+
+	strong {
+		color: #FA7B33
+	}
+	
+	ol {
+		-webkit-padding-start: 20px;
+	}
+
+
+	.button {
+    background-color: #FA7B33; /* orange */
+    border: none;
+    color: white;
+    padding: 15px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	}
+
+	.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+	}
+	
+</style>
+</head>
+<body>
+	<div id="content"class="content">
+	</div>
+	<div style="margin:0 auto;">
+		<button class="button" style="width:48%;float:left;" onclick="btnClickRE();">다시 진단하기</button>
+		<button class="button" style="width:48%;float:right;" onclick="btnClickFinsh();">확인</button>	
+	</div>
+
+<script type="text/javascript">
+	
+	function sendContent(data)
+	{
+		document.getElementById("content").innerHTML = data;
+	}
+
+
+	function btnClickRE()
+	{
+		window.HybridApp.sendReCall();
+		// ios
+		// window.location="ioscall://sendSum?no=2" + "&sum=" + sum;
+	};
+
+	function btnClickFinsh()
+	{
+		window.HybridApp.sendFinsh();
+		// ios
+		// window.location="ioscall://sendSum?no=2" + "&sum=" + sum;
+	};
+
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "157386949007",
+    "firebase_url": "https://greencross-c1a4c.firebaseio.com",
+    "project_id": "greencross-c1a4c",
+    "storage_bucket": "greencross-c1a4c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157386949007:android:f5c318ba991cace1",
+        "android_client_info": {
+          "package_name": "com.gchc.ing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157386949007-7sjupt1mm16v69roo728t52leggj6lvj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gchc.ing",
+            "certificate_hash": "b9a0d570fadda38d26928e22f6ed658f4270775b"
+          }
+        },
+        {
+          "client_id": "157386949007-degaohns59qrdljqmocb5oinjkkepfga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_6dWim775Ohw2QOAZeHfRtLUB214daMU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157386949007-degaohns59qrdljqmocb5oinjkkepfga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

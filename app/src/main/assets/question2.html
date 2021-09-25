@@ -1,0 +1,387 @@
+<html>
+<head>
+<style type="text/css">
+	body {
+		background:#fff;
+		font-family: Arial, sans-serif;
+		font-size:16px;
+		color: #22222;
+		line-height: 150%;
+		padding: 15px;
+	}
+	.fontText{
+		color: #FA7B33;
+		font-weight: bold;
+	}
+	.title-box{
+		background: #f2f2f2;
+		color: #9e9e9e;
+		margin-left: -23px;
+		margin-right: -23px;
+		margin-top: -30px;
+		margin-bottom: 20px;
+		padding: 16px;
+		padding-top: 30px;
+
+	}
+	.RadioStyle input[type="radio"] {
+		display:none;
+	}
+	.RadioStyle label {
+		display:block;
+		position:relative;
+		padding:10px 5px 10px 35px;
+		cursor:pointer;
+		color: #FA7B33;
+		margin-top: 10px;
+	}
+	.RadioStyle label:before {
+		content:'';
+		position:absolute;
+		top:5px;
+		left:0;
+		background:#fff;
+		border:2px solid #ddd;
+		width:20px;
+		height:20px;
+		
+		transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		-webkit-transition: all 0.3s;
+		-o-transition: all 0.3s;
+	}
+	.RadioStyle label:after {
+		content:'';
+		background:#FA7B33;
+		position:absolute;
+		top:5px;
+		left:0;
+		width:24px;
+		height:24px;
+		opacity: 0;
+		filter: alpha(opacity=0);
+	
+		transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		-webkit-transition: all 0.3s;
+		-o-transition: all 0.3s;
+	}
+	.RadioStyle input[type="radio"]:checked + label:before { 
+		border-color:#FA7B33;
+	}
+	.RadioStyle input[type="radio"]:checked + label:after {
+		opacity: 1;
+		filter: alpha(opacity=100);
+		width:12px;
+		height:12px;
+		top: 11px;
+  		left: 6px;
+	}
+	
+
+	.CheckboxStyle input[type="checkbox"] {
+		display:none;
+	}
+	.CheckboxStyle label {
+		display:block;
+		position:relative;
+		padding:10px 5px 10px 35px;
+		cursor:pointer;
+		color: #FA7B33;
+	}
+	.CheckboxStyle label:before {
+		content:'';
+		position:absolute;
+		top:5px;
+		left:0;
+		background:#fff;
+		border:2px solid #ddd;
+		width:20px;
+		height:20px;
+		
+		transition: all 0.2s;
+		-moz-transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+		-o-transition: all 0.2s;
+	}
+	.CheckboxStyle input[type="checkbox"]:checked + label:before {
+		border-color:#FA7B33;
+		border-width:0 2px 2px 0;
+		width: 8px;
+		height: 16px;
+		top:7px;
+		left: 7px;
+		
+		-moz-transform: rotate(31deg);
+		-ms-transform: rotate(31deg);
+		-webkit-transform: rotate(31deg);
+		transform: rotate(31deg);
+	}
+
+	.button {
+    background-color: #FA7B33; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	}
+
+	.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+	}
+	
+</style>
+</head>
+<body>
+<div class="title-box">
+	<div class="fontText">나의 폐암 발생 위험도는?</div>
+	흡연은 잘 알려진 것처럼 폐암의 가장 중요한 발병요인입니다. 그러나 흡연자가 아니라고 해서 폐암의 발생위험이 없는 것은 아닙니다. 간접흡연이나 작업환경도 폐암에 영향을 줍니다. 3주 이상 기침이 계속되거나 이유를 알 수 없는 피곤함, 가슴의 통증이 지속적이라면 폐암의 위험성을 의심해보아야 합니다.
+</div>
+
+1. 가족 및 가까운 친척(부모, 형제자매, 이모, 고모, 삼촌) 중에 폐암 진단을 받은 사람이 있었습니까?<br>
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer1_1" name="group1" value="1"/>
+    <label for="answer1_1">예</label>
+    <input type="radio" id="answer1_2" name="group1" value="0"/>
+    <label for="answer1_2">아니요</label>
+</form>	
+<p>
+2.	현재 만 나이가 어떻게 되십니까? <br>
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer2_1" name="group2" value="1"/>
+    <label for="answer2_1">20~39세</label>
+    <input type="radio" id="answer2_2" name="group2" value="2"/>
+    <label for="answer2_2">40~49세</label>
+    <input type="radio" id="answer2_3" name="group2" value="3"/>
+    <label for="answer2_3">50세 이상</label>
+</form>	
+<p>
+3.	현재 담배를 피우십니까? <br>
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer3_1" name="group3" value="4" onchange="change(this.id)"/>
+    <label for="answer3_1">예</label>
+    <input type="radio" id="answer3_2" name="group3" value="0" onchange="change(this.id)"/>
+    <label for="answer3_2">아니요</label>
+</form>	
+<p>
+4.	현재 흡연을 하신다면, 하루에 얼마나 피우십니까?	<br>
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer4_1" name="group4" value="1"/>
+    <label for="answer4_1" id="answer4_1_label">1갑 이하</label>
+    <input type="radio" id="answer4_2" name="group4" value="2"/>
+    <label for="answer4_2">1갑</label>
+    <input type="radio" id="answer4_3" name="group4" value="3"/>
+    <label for="answer4_3">1갑 반</label>
+    <input type="radio" id="answer4_4" name="group4" value="4"/>
+    <label for="answer4_4">2갑 이상</label>
+</form>	
+<p>
+5.	과거에 흡연을 하였으나, 현재 금연상태이십니까? <br>
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer5_1" name="group5" value="4" onchange="change5(this.id)"/>
+    <label for="answer5_1">예</label>
+    <input type="radio" id="answer5_2" name="group5" value="0" onchange="change5(this.id)"/>
+    <label for="answer5_2">아니요</label>
+</form>	
+<p>
+6.	과거에 흡연을 하였으나, 현재 금연 중이라면 언제 담배를 끊으셨습니까?<br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer6_1" name="group6" value="-1"/>
+    <label for="answer6_1" id="answer6_1_label">5년 미만</label>
+    <input type="radio" id="answer6_2" name="group6" value="-2"/>
+    <label for="answer6_2">6-10년 전</label>
+    <input type="radio" id="answer6_3" name="group6" value="-3"/>
+    <label for="answer6_3">11-20년 전</label>
+    <input type="radio" id="answer6_4" name="group6" value="-4"/>
+    <label for="answer6_4">21년 전</label>
+</form>	
+<p>
+7.	흡연자와 같이 사십니까?	 <br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer7_1" name="group7" value="1"/>
+    <label for="answer7_1">예</label>
+    <input type="radio" id="answer7_2" name="group7" value="0"/>
+    <label for="answer7_2">아니요</label>
+</form>	
+<p>
+8.	술집이나 식당처럼 흡연에 노출되는 환경에서 근무하십니까? <br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer8_1" name="group8" value="3"/>
+    <label for="answer8_1">예</label>
+    <input type="radio" id="answer8_2" name="group8" value="0"/>
+    <label for="answer8_2">아니요</label>
+</form>	
+<p>
+9.	만성기관지염이나 폐기종 진단을 받으신 적이 있습니까?<br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer9_1" name="group9" value="2"/>
+    <label for="answer9_1">예</label>
+    <input type="radio" id="answer9_2" name="group9" value="0"/>
+    <label for="answer9_2">아니요</label>
+</form>	
+<p>
+
+<button id="btn" class="button" style="width:100%;" onclick="btnClick();">결과 보기</button>	
+<script type="text/javascript">
+
+    function change5(id)
+	{
+		if(id == 'answer5_1')
+		{
+		    document.getElementById('answer6_1').checked = false;
+		    document.getElementById('answer6_2').checked = false;
+		    document.getElementById('answer6_3').checked = false;
+		    document.getElementById('answer6_4').checked = false;
+
+		    document.getElementById('answer6_1').disabled = false;
+		    document.getElementById('answer6_2').disabled = false;
+		    document.getElementById('answer6_3').disabled = false;
+		    document.getElementById('answer6_4').disabled = false;
+
+		}else if(id == 'answer5_2'){
+            document.getElementById('answer6_1').checked = false;
+		    document.getElementById('answer6_2').checked = false;
+		    document.getElementById('answer6_3').checked = false;
+		    document.getElementById('answer6_4').checked = false;
+
+		    document.getElementById('answer6_1').disabled = true;
+		    document.getElementById('answer6_2').disabled = true;
+		    document.getElementById('answer6_3').disabled = true;
+		    document.getElementById('answer6_4').disabled = true;
+		}
+
+    }
+	
+	function change(id)
+	{
+		if(id == 'answer3_1')
+		{
+			document.getElementById('answer5_2').checked = true;
+			document.getElementById('answer6_1').checked = true;
+			document.getElementById('answer6_1_label').innerText = '흡연중';
+
+			document.getElementById('answer5_1').disabled = true;
+			document.getElementById('answer5_2').disabled = true;
+			document.getElementById('answer6_1').disabled = true;
+			document.getElementById('answer6_2').disabled = true;
+			document.getElementById('answer6_3').disabled = true;
+			document.getElementById('answer6_4').disabled = true;
+			document.getElementById('answer6_1').value = '0';
+
+			document.getElementById('answer4_1').value = '1';
+			document.getElementById('answer4_1_label').innerText = '1갑 이하';
+			document.getElementById('answer4_1').disabled = false;
+			document.getElementById('answer4_2').disabled = false;
+			document.getElementById('answer4_3').disabled = false;
+			document.getElementById('answer4_4').disabled = false;
+
+			document.getElementById('answer4_1').checked = false;
+
+		}
+		else if(id == 'answer3_2')
+		{
+			document.getElementById('answer5_2').checked = false;
+			document.getElementById('answer6_1').checked = false;
+
+			document.getElementById('answer4_1').checked = true;
+			document.getElementById('answer4_1').value = '0';
+			document.getElementById('answer4_1_label').innerText = '흡연 하지 않음';
+
+			document.getElementById('answer4_1').disabled = true;
+			document.getElementById('answer4_2').disabled = true;
+			document.getElementById('answer4_3').disabled = true;
+			document.getElementById('answer4_4').disabled = true;
+
+
+			document.getElementById('answer5_1').disabled = false;
+			document.getElementById('answer5_2').disabled = false;
+			document.getElementById('answer6_1').disabled = false;
+			document.getElementById('answer6_2').disabled = false;
+			document.getElementById('answer6_3').disabled = false;
+			document.getElementById('answer6_4').disabled = false;
+			document.getElementById('answer6_1').value = '-4';
+			document.getElementById('answer6_1_label').innerText = '5년 미만';
+		}
+
+	}
+
+
+	function btnClick()
+	{
+		var sum = 0;
+		// radio
+		var form = document.forms;
+		for(var i = 1; i <= form.length; i++)
+		{
+			if(i == 9) continue;
+			var isCheck = false;
+			var radioBox = document.getElementsByName('group' + i);
+			for(var j=0; j < radioBox.length; j++)
+			{
+				if(radioBox[j].checked == true)
+				{
+					sum = Number(sum) + Number(radioBox[j].value);
+					isCheck = true;
+					break;
+				}
+			}
+			if(!isCheck && (document.getElementById('answer5_2').checked == false))
+			{
+				alert(i + "번 설문을 체크해 주세요");
+				return;
+			}
+		}
+		// //check box
+		// var isSelect = false;
+		// for(var a=1; a <= 4; a++)
+		// {
+		// 	var checkBox = document.getElementsByName('ck' + a);
+		// 	if(checkBox.checked = true)
+		// 	{
+		// 		isSelect = true;
+		// 		sum = Number(sum) + Number(checkBox[0].value);
+		// 	}
+		// }
+
+		// 위험지수
+		if(document.getElementById('answer3_1').checked == true)
+		{
+			sum += Number(sum) + Number(5);
+		}
+		// if(isSelect)
+		// {
+		// 	sum += Number(sum) + Number(5);
+		// }
+		// android
+		window.HybridApp.sendSum(2, sum);
+		// ios
+		// window.location="ioscall://sendSum?no=2" + "&sum=" + sum;
+	};
+
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

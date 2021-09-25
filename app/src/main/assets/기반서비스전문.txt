@@ -1,0 +1,2019 @@
+
+================================== 전체 api
+
+switch (api_code)
+
+            {
+
+ 
+
+ 
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                       
+
+                // 로그인
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                // 환경정보 가져가기         
+
+                case "getInformation":
+
+ 
+
+                    try
+
+                    {
+
+                        // OK
+
+                        json = @"{ ""api_code"": ""getInformation""  , ""app_code"": ""android""  ,""insures_code"": ""300""  }";
+
+                        get_join = SK_MOBILE_CALL.SK_Mobile_ini.Call_inicheck(json, insures_code, api_code);
+
+                           
+
+                            
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+ 
+
+                // 로그인인증 키값 가져가기        
+
+                case "logincheck":
+
+ 
+
+                    try
+
+                    {
+
+                        // OK 
+
+                        json = @"{   ""api_code"": ""logincheck"",  ""insures_code"": ""300"", ""token"": ""deviceToken"", ""app_code"": ""android4.1"" }";
+
+                        get_join = SK_MOBILE_CALL.SK_Mobile_member.Call_logincheck(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+           
+
+ 
+
+ 
+
+                // 로그인_ID 찾기      
+
+                case "login_id":
+
+ 
+
+                    try
+
+                    {
+
+                        //OK
+
+                        json = @"{   ""api_code"": ""login_id"",   ""insures_code"": ""300"", ""token"": ""deviceToken"",   ""mber_hp"": ""01085842255"" }";
+
+                        get_join = SK_MOBILE_CALL.SK_Mobile_member.Call_login_ID(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+                // 로그인_PWD 찾기
+
+                case "login_pwd":
+
+ 
+
+                    try
+
+                    {
+
+                        //OK
+
+                        json = @"{   ""api_code"": ""login_pwd"",   ""insures_code"": ""300"", ""token"": ""deviceToken"", ""mber_hp"": ""01085842254"" ,  ""mber_id"": ""tjhong@gchealthcare.com"" }";
+
+                        get_join = SK_MOBILE_CALL.SK_Mobile_member.Call_login_pwd(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                       
+
+                // 아이디 중복
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                case "mber_reg_check_id":
+
+ 
+
+                    try
+
+                    {
+
+                        //OK
+
+                        json = @"{   ""api_code"": ""mber_reg_check_id"",   ""insures_code"": ""300"", ""token"": ""deviceToken"",  ""mber_id"": ""tjhong@gchealthcare.com""   }";
+
+                        get_join = SK_MOBILE_CALL.SK_mobile_member_check.Call_reg_id(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+                // 휴대폰 중복여부
+
+                case "mber_reg_check_hp":
+
+ 
+
+                    try
+
+                    {
+
+                        //mber_chk_typ mber_id , mber_hp , mber_nm
+
+                        //OK
+
+                        json = @"{   ""api_code"": ""mber_reg_check_hp"",   ""insures_code"": ""300"", ""token"": ""deviceToken"",   ""mber_hp"": ""01085842542""  }";
+
+                        get_join = SK_MOBILE_CALL.SK_mobile_member_check.Call_reg_hp(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+                // 닉네임
+
+                case "mber_reg_check_nm":
+
+ 
+
+                    try
+
+                    {
+
+                        //mber_chk_typ mber_id , mber_hp , mber_nm
+
+ 
+
+                        json = @"{   ""api_code"": ""mber_reg_check_nm"",   ""insures_code"": ""200"", ""token"": ""deviceToken"", ""mber_nm"": ""닉네임"" }";
+
+                        get_join = SK_MOBILE_CALL.SK_mobile_member_check.Call_reg_nm(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                // 회원 가입 기초 아이디, 비밀번호,닉네임
+
+                case "mber_reg":
+
+ 
+
+                    try
+
+                    {
+
+                        //신규일대 무조건 휴대폰번호만 변경시키면 된다.
+
+                        //OK
+
+                        json = @"{   ""api_code"": ""mber_reg"",   ""insures_code"": ""300"", ""token"": ""deviceToken"",  ""app_code"": ""iphone"" , ""mber_id"": ""tj333honwg@gchealthcare.2com2"" , ""mber_pwd"": ""tes222tpwd"",""mber_hp"": ""010758421333"",""mber_nm"": ""닉네임6"" ,""mber_sex"": ""1"",""mber_lifyea"": ""19750221"",""mber_height"": ""182"",""mber_bdwgh"": ""79"",""mber_bdwgh_goal"": ""65""  , ""pushk"": ""ET"", ""app_ver"": ""0.28"" ,""phone_model"": ""SM890""   ,""mber_actqy"": ""1"",  ""disease_nm"": ""1,2,3,"",  ""medicine_yn"": ""Y"",  ""smkng_yn"": ""Y""  , ""mber_zone "": ""1"" }";
+
+                        get_join = SK_MOBILE_CALL.SK_Mobile_member.Call_reg_exe(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+                // 개인정보 불러오기
+
+                case "mber_user_call":
+
+ 
+
+                    try
+
+                    {
+
+                        // mber_sn 키값을 변경시킨다.
+
+                        //OK
+
+                        json = @"{   ""api_code"": ""mber_user_call"",   ""insures_code"": ""300"", ""mber_sn"": ""1000""  }";
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_Mobile_member.Call_user_call(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+                // 개인정보 탈퇴하기
+
+                case "mber_user_out":
+
+ 
+
+                    try
+
+                    {
+
+                        // mber_sn 키값을 변경시킨다. OK
+
+                        //OK
+
+                        json = @"{   ""api_code"": ""mber_user_call"",   ""insures_code"": ""300"", ""mber_sn"": ""1000""  }";
+
+                        get_join = SK_MOBILE_CALL.SK_Mobile_member.Call_user_out(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+ 
+
+                    break;
+
+
+ 
+
+ 
+
+             
+
+ 
+
+                // 회원 정보수정
+
+                case "mber_edit_exe":
+
+ 
+
+                    try
+
+                    {
+
+                        // mber_sn 키값을 변경시킨다. OK
+
+                        
+
+                        json = @"{   ""api_code"": ""mber_edit_exe"",   ""insures_code"": ""300"",""mber_sn"": ""1000"", ""token"": ""deviceToken"",  ""app_code"": ""android4.2"" , ""mber_id"": ""tjhong@gchealthcare.com"" , ""mber_pwd"": """",""mber_hp"": ""01085842344"",""mber_nm"": ""닉네임_지구"" , ""mber_zone "": ""2""}";
+
+                        get_join = SK_MOBILE_CALL.SK_Mobile_member.Call_edit_exe(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+                // 문진 관련된 내용 수정하기.
+
+                case "mber_edit_add_exe":
+
+ 
+
+                    try
+
+                    {
+
+                        // mber_sn 문진정보 가져오기 OK
+
+                        json = @"{   ""api_code"": ""mber_edit_add_exe"",   ""insures_code"": ""300"", ""token"": ""deviceToken"",  ""mber_sn"": ""1000"" ,""mber_sex"": ""1"",""mber_lifyea"": ""19750221"",""mber_height"": ""182"",""mber_bdwgh"": ""79"" ,""mber_bdwgh_goal"": ""65""   ,""mber_actqy"": ""1"",  ""disease_nm"": ""1,2,3,"",  ""medicine_yn"": ""Y"",  ""smkng_yn"": ""Y"" }";
+
+                        get_join = SK_MOBILE_CALL.SK_Mobile_member.Call_mber_edit_add_exe(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+               
+
+ 
+
+ 
+
+                // 개인정보 정보수정 성별,생년,신장,체중, 목표체중
+
+                case "mber_user_edit_exe":
+
+ 
+
+                    try
+
+                    {
+
+                        // mber_sn 키값을 변경시킨다. ok
+
+ 
+
+                        json = @"{   ""api_code"": ""mber_user_edit_exe"",   ""insures_code"": ""300"", ""mber_sn"": ""1000"", ""mber_sex"": ""1"",""mber_lifyea"": ""19750223"",""mber_height"": ""182"",""mber_bdwgh"": ""86"",""mber_bdwgh_goal"": ""89""  }";
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_Mobile_member.mber_user_edit_exe(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                // 로그인 하기      
+
+                case "login":
+
+ 
+
+                    try
+
+                    {   // ok
+
+                        //PUSHK     VarChar      4      아이폰에만 존재 (ET:기업테스트,ER:기업배포,AT:앱스토어테스트,AR:앱스토어배포)
+
+                        json = @"{   ""api_code"": ""login"",  ""insures_code"": ""300"", ""token"": ""APA91bHanHsaue_chJqab7tKn04XSjGrr4JvyvyrHoB2uZCx9eRY54aCrk14L0MfTx1DhSbgaUYaWGYfoBnPqO7aJSRA-xdU2gEgprAWRxraSI7cDLEVnAqyXnrZpYigAE9OmSNSPnkK9lI0zjNQZhQgwn3uDgpLRYh8mM9uHq1FLOfYhYNhA1E"", ""mber_id"": ""tjhong@naver.com"" , ""mber_pwd"": ""124000ab"", ""app_code"": ""android19"",""phone_model"": ""SM-N910S"",""pushk"": """", ""app_ver"": ""1.20"" }";
+
+                        get_join = SK_MOBILE_CALL.SK_Mobile_member.Call_login(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+ 
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                /////////////////////장치 등록///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ 
+
+                // 장치등록 get write_unique 아이디 가져오기
+
+                  // 활동계, 체중계, 체지방계, 혈압계, 혈당계 등 해당 고유 키값을 가져오기
+
+                case "hedct_uniqueid":
+
+ 
+
+                    try
+
+                    {   //OK
+
+                        json = @"{   ""api_code"": ""hedct_uniqueid"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000"" ,""mac_addr"": ""fe00dsf52sdfasdf52sdfs""  }";
+
+                        get_join = SK_MOBILE_CALL.SK_mobile_hedct.Call_hedct_uniqueid(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+                // 장치등록 hedct_reg
+
+                case "hedct_reg":
+
+ 
+
+                    //hedct_no"": ""0001252145212"" 장치에 대한 고유한 키값을 말한다.
+
+                  // 20150804 회사 코웨이 남품을 위하여 구분할수 잇는 키값이 있어야 되는데?
+
+                    try
+
+                    {   //OK
+
+                        json = @"{   ""api_code"": ""hedct_reg"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000"" ,""hedct_hist_sn"": ""1000001"",""hedct_ver"": ""1.1"" , ""mac_addr"": ""fe00dsf52sdfasdf52sdfs"",""hedct_nm"": ""체중계""  ,""ostype"": ""android""  }";
+
+                        get_join = SK_MOBILE_CALL.SK_mobile_hedct.Call_hedct_reg(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+                
+
+ 
+
+                // 장치현황리스트
+
+                case "hedct_list":
+
+ 
+
+                    try
+
+                    {
+
+                        //OK
+
+                        json = @"{   ""api_code"": ""hedct_list"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000""}";
+
+                        get_join = SK_MOBILE_CALL.SK_mobile_hedct.Call_hedct_list(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+                // 장치닉네임 및 장치삭제건에 대하여
+
+                case "hedct_edit":
+
+ 
+
+                    try
+
+                    {
+
+                        //OK
+
+                        json = @"{   ""api_code"": ""hedct_edit"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000"" ,""hedct_sn"": ""1000002"",""hedct_nm"": ""장치이름"",""hedct_yn"": ""Y""}";
+
+                        get_join = SK_MOBILE_CALL.SK_mobile_hedct.Call_hedct_edit(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                /////////////////////운동DATA///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ 
+
+                // data 목표 수정폼 (소모칼로리, 하루 목표 걸음수)
+
+                case "mvm_goalqy":
+
+ 
+
+                    try
+
+                    {
+
+                        //ok goal_mvm_calory 목표 칼로리 ,         goal_mvm_stepcnt : 목표 걸음수
+
+                        json = @"{   ""api_code"": ""mvm_goalqy"",  ""insures_code"": ""300"",  ""mber_sn"": ""1000"" , ""goal_mvm_calory"": ""1000""  , ""goal_mvm_stepcnt"": ""1300""   }";
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_MVM.Call_mvm_goalqy(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+
+ 
+
+ 
+
+                // 운동 data 넣는 부분 자동, 수동 값을 넣는다. 
+
+                case "mvm_info_input_data":
+
+                    try
+
+                    {   // idx
+
+                        //calorie 칼로리 Str 7 M
+
+                        //distance 이동거리 Str 7
+
+                        //step 걸음수 Str 7 M
+
+                        //heartRate 최근
+
+   
+
+                        //json = @"{   ""api_code"": ""mvm_info_input_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000"" ,""ast_mass"":[{""idx"":""1"",""calorie"":""100"",""distance"":""50"",""step"":""580"",""heartRate"":""150"",""stress"":""50"",""regtype"":""D"",""regdate"":""201703301420""  },{""idx"":""2"",""calorie"":""100"",""distance"":""503"",""step"":""510"",""heartRate"":""150"",""stress"":""50"",""regtype"":""U"",""regdate"":""201703301420""  },{""idx"":""4"",""calorie"":""100"",""distance"":""502"",""step"":""584"",""heartRate"":""150"",""stress"":""50"",""regtype"":""D"",""regdate"":""201703301420""  }] }";
+
+ 
+
+                        json = @"{   ""api_code"": ""mvm_info_input_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000"" ,""ast_mass"":[{""idx"":""170410173713859"",""calorie"":""100"",""distance"":""50"",""step"":""580"",""heartRate"":""150"",""stress"":""50"",""regtype"":""D"",""regdate"":""201703301420""  }  ] }";
+
+ 
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_MVM.Call_input_data(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+                // 운동 data  수정하기
+
+                case "mvm_info_edit_data":
+
+                    try
+
+                    {   // idx
+
+                        //calorie 칼로리 Str 7 M
+
+                        //distance 이동거리 Str 7
+
+                        //step 걸음수 Str 7 M
+
+                        //heartRate 최근
+
+                        json = @"{   ""api_code"": ""mvm_info_edit_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000"" ,""ast_mass"":[{""idx"":""170410173713859"",""calorie"":""1200"",""distance"":""50"",""step"":""580"",""heartRate"":""150"",""stress"":""50"",""regtype"":""D"",""regdate"":""201703301420""  }  ] }";
+
+ 
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_MVM.Call_edit_data(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+                // 운동 data 삭제하기
+
+                case "mvm_info_del_data":
+
+                    try
+
+                    {   // idx
+
+                        json = @"{   ""api_code"": ""mvm_info_del_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000"" ,""ast_mass"":[{""idx"":""170410173713859""}  ] }";
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_MVM.Call_del_data(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                /////////////////////혈당DATA///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ 
+
+ 
+
+                // 투약정보 혈당관련된 투약품 입력 앱고유키값과 같이 저장시킨다.
+
+                case "bdsg_dose_medicine_input":
+
+ 
+
+                    try
+
+                    {
+
+                        //medicine_typ(1) 혈당 투약 정보
+
+                        //앱에서의 혈당투약 키값도 같이 보내줘야 한다.  idx 앱에 저장되어 있는 고유키값
+
+                        json = @"{   ""api_code"": ""bdsg_dose_medicine_input"",  ""insures_code"": ""300"",  ""mber_sn"": ""1000"" , ""idx"":""1""  , ""medicine_nm"": ""혈당약품"" ,""reg_day"": ""201703271420""  , ""medicine_typ"": ""1""   }";
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_BDSG.Call_medicine_input(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+                  
+
+ 
+
+                // 혈당 data 넣는 부분 자동, 수동 값을 넣는다. 
+
+                case "bdsg_info_input_data":
+
+ 
+
+                    try
+
+                    {
+
+                        // ok    
+
+                        //sugar 혈당값 Str 7
+
+                        /*
+
+                        hiLow 임시 Str 7 이후
+
+                        before 0:식전 1:식후
+
+                        drugname
+
+                        regtype*/
+
+                        json = @"{   ""api_code"": ""bdsg_info_input_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000""   ,""ast_mass"":[     {""idx"":""1"",""sugar"":""100"",""hiLow"":""50"",""before"":""0"",""drugname"":""약이름"",""regtype"":""D"",""regdate"":""201703301420""  },{""idx"":""2"",""sugar"":""10"",""hiLow"":""50"",""before"":""0"",""drugname"":""약이름"",""regtype"":""U"",""regdate"":""201703301420""   },{""idx"":""4"",""sugar"":""120"",""hiLow"":""20"",""before"":""1"",""drugname"":""약이름"",""regtype"":""D"",""regdate"":""201703301420""   }] }";
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_BDSG.Call_input_data(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+ 
+
+                // 혈당 data DATA 수정하기 
+
+                case "bdsg_info_edit_data":
+
+ 
+
+                    try
+
+                    {
+
+                        // ok    
+
+                        //sugar 혈당값 Str 7
+
+                        /*
+
+                        hiLow 임시 Str 7 이후
+
+                        before 0:식전 1:식후
+
+                        drugname
+
+                        regtype*/
+
+                        json = @"{   ""api_code"": ""bdsg_info_edit_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000""   ,""ast_mass"":[     {""idx"":""1"",""sugar"":""13300"",""hiLow"":""50"",""before"":""0"",""drugname"":""약이름"",""regtype"":""D"",""regdate"":""201703301420""  },{""idx"":""2"",""sugar"":""10"",""hiLow"":""50"",""before"":""0"",""drugname"":""약이름"",""regtype"":""U"",""regdate"":""201703301420""   },{""idx"":""4"",""sugar"":""120"",""hiLow"":""20"",""before"":""1"",""drugname"":""약이름"",""regtype"":""D"",""regdate"":""201703301420""   }] }";
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_BDSG.Call_edit_data(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+ 
+
+                // 혈당 data 삭제하기
+
+                case "bdsg_info_del_data":
+
+ 
+
+                    try
+
+                    {
+
+                        // ok    
+
+                        //sugar 혈당값 Str 7
+
+                        /*
+
+                        hiLow 임시 Str 7 이후
+
+                        before 0:식전 1:식후
+
+                        drugname
+
+                        regtype*/
+
+                        json = @"{   ""api_code"": ""bdsg_info_del_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000""   ,""ast_mass"":[     {""idx"":""1""  }] }";
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_BDSG.Call_del_data(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+               
+
+ 
+
+ 
+
+ 
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                /////////////////////혈압DATA///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                // 혈압에 대한 투약 정보 넣기
+
+                case "brssr_dose_medicine_input":
+
+ 
+
+                    try
+
+                    {
+
+                        //medicine_typ(2) 혈압 투약 정보
+
+                        json = @"{   ""api_code"": ""bdsg_dose_medicine_input"",  ""insures_code"": ""300"",  ""mber_sn"": ""1000"" , ""reg_day"": ""201703271420""  , ""medicine_nm"": ""혈압약품""  , ""medicine_typ"": ""2""   }";
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_BRSSR.Call_medicine_input(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+                // 혈압 data 넣는 부분 자동, 수동 값을 넣는다. 
+
+                case "brssr_info_input_data":
+
+ 
+
+                    try
+
+                    {
+
+                        //arterialPressure 동맥압력
+
+                        //diastolicPressure 이완기혈압
+
+                       // pulseRate 맥박속도
+
+                       //     systolicPressure 수축기압력
+
+                       //         drugname 약이름
+
+ 
+
+                        json = @"{   ""api_code"": ""brssr_info_input_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000""   ,""ast_mass"":[{""idx"":""1"",""arterialPressure"":""100"",""diastolicPressure"":""50"",""pulseRate"":""0"",""systolicPressure"":""30"",""drugname"":""혈압약"",""regtype"":""D"",""regdate"":""201703301420""  } ,{""idx"":""2"",""arterialPressure"":""10"",""diastolicPressure"":""50"",""pulseRate"":""0"",""systolicPressure"":""30"",""drugname"":""약이름"",""regtype"":""U"",""regdate"":""201703301420""   } ,{""idx"":""4"",""arterialPressure"":""120"",""diastolicPressure"":""20"",""pulseRate"":""1"",""systolicPressure"":""30"",""drugname"":""약이름"",""regtype"":""D"",""regdate"":""201703301420""   }] }";
+
+                        //  예제 관련     {"PGUBUN":"A","AST_LENGTH":"1","SEQ":"1244","ACTIVE_LENGTH":"0","DOCNO":"DA001","AST_MASS":[{"DA_CTS_STEP":"0","DA_EX_TIME":"0","DA_MAX_VEL":"0","DA_RES_TIME":"538","WD":"20140929"}]}
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_BRSSR.Call_input_data(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+                // 혈압 data 수정하기
+
+                case "brssr_info_edit_data":
+
+ 
+
+                    try
+
+                    {
+
+                        //arterialPressure 동맥압력
+
+                        //diastolicPressure 이완기혈압
+
+                        // pulseRate 맥박속도
+
+                        //     systolicPressure 수축기압력
+
+                        //         drugname 약이름
+
+ 
+
+                        json = @"{   ""api_code"": ""brssr_info_edit_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000""   ,""ast_mass"":[{""idx"":""1"",""arterialPressure"":""11100"",""diastolicPressure"":""50"",""pulseRate"":""0"",""systolicPressure"":""30"",""drugname"":""혈압약"",""regtype"":""D"",""regdate"":""201703301420""  } ,{""idx"":""2"",""arterialPressure"":""10"",""diastolicPressure"":""50"",""pulseRate"":""0"",""systolicPressure"":""30"",""drugname"":""약이름"",""regtype"":""U"",""regdate"":""201703301420""   } ,{""idx"":""4"",""arterialPressure"":""120"",""diastolicPressure"":""20"",""pulseRate"":""1"",""systolicPressure"":""30"",""drugname"":""약이름"",""regtype"":""D"",""regdate"":""201703301420""   }] }";
+
+                        //  예제 관련     {"PGUBUN":"A","AST_LENGTH":"1","SEQ":"1244","ACTIVE_LENGTH":"0","DOCNO":"DA001","AST_MASS":[{"DA_CTS_STEP":"0","DA_EX_TIME":"0","DA_MAX_VEL":"0","DA_RES_TIME":"538","WD":"20140929"}]}
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_BRSSR.Call_edit_data(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+ 
+
+                // 혈압 data 삭제하기
+
+                case "brssr_info_del_data":
+
+ 
+
+                    try
+
+                    {
+
+                        //arterialPressure 동맥압력
+
+                        //diastolicPressure 이완기혈압
+
+                        // pulseRate 맥박속도
+
+                        //     systolicPressure 수축기압력
+
+                        //         drugname 약이름
+
+ 
+
+                        json = @"{   ""api_code"": ""brssr_info_del_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000""   ,""ast_mass"":[{""idx"":""1""  }] }";
+
+                        //  예제 관련     {"PGUBUN":"A","AST_LENGTH":"1","SEQ":"1244","ACTIVE_LENGTH":"0","DOCNO":"DA001","AST_MASS":[{"DA_CTS_STEP":"0","DA_EX_TIME":"0","DA_MAX_VEL":"0","DA_RES_TIME":"538","WD":"20140929"}]}
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_BRSSR.Call_del_data(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                /////////////////////체중DATA///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ 
+
+
+ 
+
+                // 체중 data 넣는 부분 자동, 수동 값을 넣는다. 
+
+                case "bdwgh_info_input_data":
+
+ 
+
+                    try
+
+                    {
+
+    /* 
+
+     * IDX
+
+bmr 기초대사율 Str 7
+
+bodyWater 체수분 Str 7
+
+bone 뼈 Str 7
+
+fat 살 Str 7
+
+heartRate 심박동수 Str 7
+
+muscle 근육 Str 7
+
+obesity 비만 Str 7 M
+
+weight 체중 Str 7 M
+
+regtype 등록타입 Str 1 M D:디바이스,U:직접등록
+
+regdate 등록일시 Date M yyyyMMddHHmm*/
+
+ 
+
+                        json = @"{   ""api_code"": ""bdwgh_info_input_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000""   ,""ast_mass"":[{""idx"":""1"",""bmr"":""100"",""bodyWater"":""50"",""bone"":""0"",""fat"":""30"",""heartRate"":""11"",""muscle"":""50"",""obesity"":""0"",""weight"":""11"",""regtype"":""D"",""regdate"":""201703301420""  }, {""idx"":""3"",""bmr"":""200"",""bodyWater"":""150"",""bone"":""10"",""fat"":""230"",""heartRate"":""311"",""muscle"":""51"",""obesity"":""1"",""weight"":""13"",""regtype"":""D"",""regdate"":""201703301420""  }, {""idx"":""4"",""bmr"":""400"",""bodyWater"":""530"",""bone"":""3"",""fat"":""310"",""heartRate"":""141"",""muscle"":""52"",""obesity"":""3"",""weight"":""131"",""regtype"":""D"",""regdate"":""201703301420""  } ] }";
+
+ 
+
+                        //  예제 관련     {"PGUBUN":"A","AST_LENGTH":"1","SEQ":"1244","ACTIVE_LENGTH":"0","DOCNO":"DA001","AST_MASS":[{"DA_CTS_STEP":"0","DA_EX_TIME":"0","DA_MAX_VEL":"0","DA_RES_TIME":"538","WD":"20140929"}]}
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_BDWGH.Call_input_data(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+                // 체중 data 넣는 수정하기
+
+                case "bdwgh_info_edit_data":
+
+ 
+
+                    try
+
+                    {
+
+                        /* 
+
+                         * IDX
+
+                    bmr 기초대사율 Str 7
+
+                    bodyWater 체수분 Str 7
+
+                    bone 뼈 Str 7
+
+                    fat 살 Str 7
+
+                    heartRate 심박동수 Str 7
+
+                    muscle 근육 Str 7
+
+                    obesity 비만 Str 7 M
+
+                    weight 체중 Str 7 M
+
+                    regtype 등록타입 Str 1 M D:디바이스,U:직접등록
+
+                    regdate 등록일시 Date M yyyyMMddHHmm*/
+
+ 
+
+                        json = @"{   ""api_code"": ""bdwgh_info_edit_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000""   ,""ast_mass"":[{""idx"":""1"",""bmr"":""145"",""bodyWater"":""50"",""bone"":""0"",""fat"":""30"",""heartRate"":""11"",""muscle"":""50"",""obesity"":""0"",""weight"":""11"",""regtype"":""D"",""regdate"":""201703301420""   } ] }";
+
+ 
+
+                        //  예제 관련     {"PGUBUN":"A","AST_LENGTH":"1","SEQ":"1244","ACTIVE_LENGTH":"0","DOCNO":"DA001","AST_MASS":[{"DA_CTS_STEP":"0","DA_EX_TIME":"0","DA_MAX_VEL":"0","DA_RES_TIME":"538","WD":"20140929"}]}
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_BDWGH.Call_edit_data(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+ 
+
+                // 체중 data 삭제하기 
+
+                case "bdwgh_info_del_data":
+
+ 
+
+                    try
+
+                    {
+
+                        /* 
+
+                         * IDX
+
+                    bmr 기초대사율 Str 7
+
+                    bodyWater 체수분 Str 7
+
+                    bone 뼈 Str 7
+
+                    fat 살 Str 7
+
+                    heartRate 심박동수 Str 7
+
+                    muscle 근육 Str 7
+
+                    obesity 비만 Str 7 M
+
+                    weight 체중 Str 7 M
+
+                    regtype 등록타입 Str 1 M D:디바이스,U:직접등록
+
+                    regdate 등록일시 Date M yyyyMMddHHmm*/
+
+ 
+
+                        json = @"{   ""api_code"": ""bdwgh_info_del_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000""   ,""ast_mass"":[{""idx"":""1"" } ] }";
+
+ 
+
+                        //  예제 관련     {"PGUBUN":"A","AST_LENGTH":"1","SEQ":"1244","ACTIVE_LENGTH":"0","DOCNO":"DA001","AST_MASS":[{"DA_CTS_STEP":"0","DA_EX_TIME":"0","DA_MAX_VEL":"0","DA_RES_TIME":"538","WD":"20140929"}]}
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_BDWGH.Call_del_data(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+ 
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                /////////////////////물DATA///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                  
+
+                // 물 목표량 // 섭취량
+
+                case "water_goalqy":
+
+ 
+
+                    try
+
+                    {
+
+                        //ok goal_water_goalqy 물 목표량   , goal_water_ntkqy : 물 섭취량
+
+                        json = @"{   ""api_code"": ""mvm_goalqy"",  ""insures_code"": ""300"",  ""mber_sn"": ""1000"" , ""goal_water_goalqy"": ""4000""  , ""goal_water_ntkqy"": ""1000""    }";
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_WATER.Call_water_goalqy(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+ 
+
+                // 물 data 넣는 부분 자동, 수동 값을 넣는다. 
+
+                case "water_info_input_data":
+
+ 
+
+                    try
+
+                    {   //ok
+
+                        //@WATER_NTKQY water_ntkqy , auto_typ       
+
+                        json = @"{   ""api_code"": ""water_info_input_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000""   ,""ast_mass"":[{""idx"":""1"",""amount"":""100"" ,""regtype"":""D"",""regdate"":""201703301420""  } ,{ ""idx"":""3"",""amount"":""100"" ,""regtype"":""D"",""regdate"":""201703301420""   } ,{""idx"":""4"",""amount"":""100"" ,""regtype"":""U"",""regdate"":""201703301420""    }] }";
+
+                        //  예제 관련     {"PGUBUN":"A","AST_LENGTH":"1","SEQ":"1244","ACTIVE_LENGTH":"0","DOCNO":"DA001","AST_MASS":[{"DA_CTS_STEP":"0","DA_EX_TIME":"0","DA_MAX_VEL":"0","DA_RES_TIME":"538","WD":"20140929"}]}
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_WATER.Call_input_data(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+                // 물 data 수정하기
+
+                case "water_info_edit_data":
+
+ 
+
+                    try
+
+                    {   //ok
+
+                        //@WATER_NTKQY water_ntkqy , auto_typ       
+
+                        json = @"{   ""api_code"": ""water_info_edit_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000""   ,""ast_mass"":[{""idx"":""1"",""amount"":""1400"" ,""regtype"":""D"",""regdate"":""201703301420""  } ,{ ""idx"":""3"",""amount"":""100"" ,""regtype"":""D"",""regdate"":""201703301420""   } ,{""idx"":""4"",""amount"":""100"" ,""regtype"":""U"",""regdate"":""201703301420""    }] }";
+
+                        //  예제 관련     {"PGUBUN":"A","AST_LENGTH":"1","SEQ":"1244","ACTIVE_LENGTH":"0","DOCNO":"DA001","AST_MASS":[{"DA_CTS_STEP":"0","DA_EX_TIME":"0","DA_MAX_VEL":"0","DA_RES_TIME":"538","WD":"20140929"}]}
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_WATER.Call_edit_data(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+                // 물 data 삭제하기
+
+                case "water_info_del_data":
+
+ 
+
+                    try
+
+                    {   //ok
+
+                        //@WATER_NTKQY water_ntkqy , auto_typ       
+
+                        json = @"{   ""api_code"": ""water_info_del_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000""   ,""ast_mass"":[{""idx"":""1""   }] }";
+
+                        //  예제 관련     {"PGUBUN":"A","AST_LENGTH":"1","SEQ":"1244","ACTIVE_LENGTH":"0","DOCNO":"DA001","AST_MASS":[{"DA_CTS_STEP":"0","DA_EX_TIME":"0","DA_MAX_VEL":"0","DA_RES_TIME":"538","WD":"20140929"}]}
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_INFRA_WATER.Call_del_data(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                /////////////////////3 개월 원하는 날자의 data를 가져오기 위한  ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ 
+
+                // 앱 삭제시 관련된 로우  data 가져오기      
+
+                case "get_hedctdata":
+
+ 
+
+                    try
+
+                    {
+
+                         // data 가져올 날짜 ~ 끝나는 날짜까지
+
+                        // get_data_typ 1: 운동      2:혈당    3:혈압    4:체중    5:물data (제일 Low data)
+
+                        json = @"{   ""api_code"": ""get_hedctdata"" ,  ""get_data_typ"": ""5""  ,  ""insures_code"": ""300"",""mber_sn"": ""1000"",""begin_day"": ""20170301"",""end_day"": ""20170330"" }";
+
+                        get_join = SK_MOBILE_CALL.SK_mobile_getdata.get_hedctdata(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+                // 혈당 및 혈압약 가져오기    
+
+                case "get_medicine_nm":
+
+ 
+
+                    try
+
+                    {
+
+                        // data 가져올 날짜 ~ 끝나는 날짜까지
+
+                        // get_medicine_typ 1: 혈당약       2:혈압약
+
+                        json = @"{   ""api_code"": ""get_medicine_nm"" ,  ""get_medicine_typ"": ""1""  ,  ""insures_code"": ""300"",""mber_sn"": ""1000"",""begin_day"": ""20170301"",""end_day"": ""20170330"" }";
+
+                        get_join = SK_MOBILE_CALL.SK_mobile_getdata.get_medicine_nm(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+                  
+
+ 
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                /////////////////////SET 환경셜정 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+               
+
+ 
+
+                // 건강메세지 가져오기 
+
+                case "infra_message":
+
+ 
+
+                    try
+
+                    {
+
+                        json = @"{   ""api_code"": ""infra_message"",   ""insures_code"": ""300"",   ""app_code"": ""android"" ,""mber_sn"": ""1000"" ,""pageNumber"": ""1""}";
+
+ 
+
+                        get_join = SK_MOBILE_CALL.SK_mobile_set.infra_message(json, insures_code, api_code);
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                /////////////////////미세먼지 가져오기  ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ 
+
+                // 미세먼지 data 가져오기       
+
+                case "get_dust":
+
+ 
+
+                    try
+
+                    {
+
+                        json = @"{   ""api_code"": ""get_dust"",  ""insures_code"": ""300"",""dust_nm"": ""서울"",""dust_sn"": ""1"" }";
+
+                        get_join = SK_MOBILE_CALL.SK_mobile_set.get_dust(json, insures_code, api_code);
+
+ 
+
+                    }
+
+                    catch (Exception ex)
+
+                    {
+
+                        ex.ToString();
+
+                    }
+
+ 
+
+                    break;
+
+ 
+
+ 
+
+ 
+
+ 
+
+                default:
+
+                // 실행할 코드
+
+                break;
+
+ 
+
+            }
+
+
+
+
+
+
+
+
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                // 로그인 하기      
+                case "login":
+ 
+                    try
+                    {   // ok
+                        //PUSHK     VarChar      4      아이폰에만 존재 (ET:기업테스트,ER:기업배포,AT:앱스토어테스트,AR:앱스토어배포)
+                        json = @"{   ""api_code"": ""login"",  ""insures_code"": ""300"", ""token"": ""APA91bHanHsaue_chJqab7tKn04XSjGrr4JvyvyrHoB2uZCx9eRY54aCrk14L0MfTx1DhSbgaUYaWGYfoBnPqO7aJSRA-xdU2gEgprAWRxraSI7cDLEVnAqyXnrZpYigAE9OmSNSPnkK9lI0zjNQZhQgwn3uDgpLRYh8mM9uHq1FLOfYhYNhA1E"", ""mber_id"": ""tjhong@naver.com"" , ""mber_pwd"": ""124000ab"", ""app_code"": ""android19"",""phone_model"": ""SM-N910S"",""pushk"": """", ""app_ver"": ""1.20"" }";
+                        get_join = SK_MOBILE_CALL.SK_Mobile_member.Call_login(json, insures_code, api_code);
+ 
+                    }
+                    catch (Exception ex)
+                    {
+                        ex.ToString();
+                    }
+ 
+                    break;
+ 
+
+
+
+
+
+
+
+
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 /////////////////////식사일지 (아침,점심,간식,아침간식,점심간식,저녁간식) /////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                 // 식사일지 (아침,점심,간식,아침간식,점심간식,저녁간식) 등록하기
+                 //아침:a,점심   b ,저녁 c , 아침간식 d , 점심간식 e , 저녁간식  f
+                 // 식사 메인 등록폼 아침따로 등록
+                 case "meal_input_data":
+                     try
+                     {
+                         json = @"{   ""api_code"": ""meal_input_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000"" ,""idx"": ""77777788889"",   ""amounttime"": ""10"",  ""mealtype"": ""a"" ,  ""calorie"": ""111"" ,  ""regdate"": ""201704161007""  }";
+                         get_join = SK_MOBILE_CALL.SK_INFRA_MEAL.Call_input_data(json, insures_code, api_code);
+
+                     }
+                     catch (Exception ex)
+                     {
+                         ex.ToString();
+                     }
+
+                     break;
+
+                 //식사에 음식추가 하기 (따로 넣는다.. 아침식사에 여러음식이 습취할수 있으므로 배열처리 한다.
+                 case "meal_input_food_data":
+                     try
+                     {
+                         json = @"{   ""api_code"": ""meal_input_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000"" ,""idx"": ""7777778888"",""food_mass"":[{ ""foodcode"":""100"" ,""forpeople"":""1"" ,""regdate"": ""201704161007""} ,{ ""foodcode"":""101"" ,""forpeople"":""1"" ,""regdate"": ""201704161007""} ,{ ""foodcode"":""102"" ,""forpeople"":""1"" ,""regdate"": ""201704161007""}] }";
+                         get_join = SK_MOBILE_CALL.SK_INFRA_MEAL.Call_input_food_data(json, insures_code, api_code);
+
+                     }
+                     catch (Exception ex)
+                     {
+                         ex.ToString();
+                     }
+
+                     break;
+
+
+
+                 // 식사일지 (아침,점심,간식,아침간식,점심간식,저녁간식) 등록하기
+                 //아침:a,점심   b ,저녁 c , 아침간식 d , 점심간식 e , 저녁간식  f
+                 // 식사 수정하기
+                 case "meal_input_edit_data":
+                     try
+                     {
+                         json = @"{   ""api_code"": ""meal_input_edit_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000"" ,""idx"": ""7777778888"",   ""amounttime"": ""10"",  ""mealtype"": ""b"" ,  ""calorie"": ""33111"" ,  ""regdate"": ""201704161007""  }";
+                         get_join = SK_MOBILE_CALL.SK_INFRA_MEAL.meal_edit_exe(json, insures_code, api_code);
+
+                     }
+                     catch (Exception ex)
+                     {
+                         ex.ToString();
+                     }
+
+                     break;
+
+                 // 식사일지 (아침,점심,간식,아침간식,점심간식,저녁간식) 등록하기
+                 //아침:a,점심   b ,저녁 c , 아침간식 d , 점심간식 e , 저녁간식  f
+                 // 식사 삭제하기
+                 case "meal_input_del_data":
+                     try
+                     {
+                         json = @"{   ""api_code"": ""meal_input_del_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000"" ,""idx"": ""7777778888"" }";
+                         get_join = SK_MOBILE_CALL.SK_INFRA_MEAL.meal_del_exe(json, insures_code, api_code);
+
+                     }
+                     catch (Exception ex)
+                     {
+                         ex.ToString();
+                     }
+
+                     break;
+
+
+
+                 //음식 수정하기
+                 case "meal_input_food_edit_data":
+                     try
+                     {
+                         json = @"{   ""api_code"": ""meal_input_food_edit_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000"" ,""idx"": ""7777778888"",""foodcode"": ""102"",""forpeople"": ""3""}";
+                         get_join = SK_MOBILE_CALL.SK_INFRA_MEAL.food_edit_exe(json, insures_code, api_code);
+
+                     }
+                     catch (Exception ex)
+                     {
+                         ex.ToString();
+                     }
+
+                     break;
+
+                 // 음식 삭제하기
+                 case "meal_input_food_del_data":
+                     try
+                     {
+                         json = @"{   ""api_code"": ""meal_input_food_del_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000"" ,""idx"": ""7777778888"",""foodcode"": ""102""}";
+                         get_join = SK_MOBILE_CALL.SK_INFRA_MEAL.food_del_exe(json, insures_code, api_code);
+
+                     }
+                     catch (Exception ex)
+                     {
+                         ex.ToString();
+                     }
+
+                     break;
+
+
+
+
+                 // 식사일지 (아침,점심,간식,아침간식,점심간식,저녁간식) 등록하기
+                 //아침:a,점심   b ,저녁 c , 아침간식 d , 점심간식 e , 저녁간식  f
+                 // 식사 data 가져오기 시작일 ~ 끝나는 일
+                 case "get_meal_input_data":
+                     try
+                     {
+                         json = @"{   ""api_code"": ""get_meal_input_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000""  , ""begin_day"": ""20170301"",""end_day"": ""20170430"" }";
+                         get_join = SK_MOBILE_CALL.SK_INFRA_MEAL.get_meal_input_data(json, insures_code, api_code);
+
+                     }
+                     catch (Exception ex)
+                     {
+                         ex.ToString();
+                     }
+
+                     break;
+
+
+
+
+                 // 음식 data 가져오기  시작일 ~ 끝나는 일
+                 case "get_meal_input_food_data":
+                     try
+                     {
+                         json = @"{   ""api_code"": ""get_meal_input_food_data"",   ""insures_code"": ""300"",  ""mber_sn"": ""1000"" ,  ""begin_day"": ""20170301"",""end_day"": ""20170430"" }";
+                         get_join = SK_MOBILE_CALL.SK_INFRA_MEAL.get_meal_input_food_data(json, insures_code, api_code);
+
+                     }
+                     catch (Exception ex)
+                     {
+                         ex.ToString();
+                     }
+
+                     break;
+ 
+ 
+// 회사코드
+                res.Add(new JsonStringValue("api_code", api_code));
+                // 어플 코드 
+                res.Add(new JsonStringValue("insures_code", insures_code));
+                res.Add(new JsonStringValue("mber_sn", mber_sn));
+                res.Add(new JsonStringValue("tot_basic_goal", _tot_basic_goal));
+                res.Add(new JsonStringValue("day_basic_goal", _day_basic_goal));
+                res.Add(new JsonStringValue("default_basic_goal", _default_basic_goal));
+                res.Add(new JsonStringValue("log_yn", "Y"));
+                res.Add(new JsonStringValue("mber_hp_newyn", _mber_hp_newyn));
+                res.Add(new JsonStringValue("mber_sex", _MBER_SEX));
+                res.Add(new JsonStringValue("mber_nm", _MBER_NM));
+                res.Add(new JsonStringValue("mber_hp", _MBER_HP));
+                res.Add(new JsonStringValue("mber_sex", _MBER_SEX));
+                res.Add(new JsonStringValue("mber_height", _MBER_HEIGHT));
+                res.Add(new JsonStringValue("mber_bdwgh", _MBER_BDWGH));
+                res.Add(new JsonStringValue("mber_bdwgh_goal", _MBER_BDWGH_GOAL));
+                res.Add(new JsonStringValue("mber_actqy", _MBER_ACTQY));
+                res.Add(new JsonStringValue("mber_zone", _MBER_ZONE));
+ 
+                res.Add(new JsonStringValue("goal_mvm_calory", _GOAL_MVM_CALORY));    // 운동 목표 칼로리
+                res.Add(new JsonStringValue("goal_mvm_stepcnt", _GOAL_MVM_STEPCNT));  // 운동 걸음수
+                res.Add(new JsonStringValue("goal_water_ntkqy", _GOAL_WATER_NTKQY));  // 물 음용량 목표량
+ 
+ 
+ 

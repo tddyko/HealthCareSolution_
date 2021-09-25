@@ -1,0 +1,417 @@
+<html>
+<head>
+<style type="text/css">
+	body {
+		background:#fff;
+		font-family: Arial, sans-serif;
+		font-size:16px;
+		color: #22222;
+		line-height: 150%;
+		padding: 15px;
+	}
+	.fontText{
+		color: #FA7B33;
+		font-weight: bold;
+	}
+	.title-box{
+		background: #f2f2f2;
+		color: #9e9e9e;
+		margin-left: -23px;
+		margin-right: -23px;
+		margin-top: -30px;
+		margin-bottom: 20px;
+		padding: 16px;
+		padding-top: 30px;
+
+	}
+	.RadioStyle input[type="radio"] {
+		display:none;
+	}
+	.RadioStyle label {
+		display:block;
+		position:relative;
+		padding:10px 5px 10px 35px;
+		cursor:pointer;
+		color: #FA7B33;
+		margin-top: 10px;
+	}
+	.RadioStyle label:before {
+		content:'';
+		position:absolute;
+		top:5px;
+		left:0;
+		background:#fff;
+		border:2px solid #ddd;
+		width:20px;
+		height:20px;
+		
+		transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		-webkit-transition: all 0.3s;
+		-o-transition: all 0.3s;
+	}
+	.RadioStyle label:after {
+		content:'';
+		background:#FA7B33;
+		position:absolute;
+		top:5px;
+		left:0;
+		width:24px;
+		height:24px;
+		opacity: 0;
+		filter: alpha(opacity=0);
+	
+		transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		-webkit-transition: all 0.3s;
+		-o-transition: all 0.3s;
+	}
+	.RadioStyle input[type="radio"]:checked + label:before { 
+		border-color:#FA7B33;
+	}
+	.RadioStyle input[type="radio"]:checked + label:after {
+		opacity: 1;
+		filter: alpha(opacity=100);
+		width:12px;
+		height:12px;
+		top: 11px;
+  		left: 6px;
+	}
+	
+
+	.CheckboxStyle input[type="checkbox"] {
+		display:none;
+	}
+	.CheckboxStyle label {
+		display:block;
+		position:relative;
+		padding:10px 5px 10px 35px;
+		cursor:pointer;
+		color: #FA7B33;
+	}
+	.CheckboxStyle label:before {
+		content:'';
+		position:absolute;
+		top:5px;
+		left:0;
+		background:#fff;
+		border:2px solid #ddd;
+		width:20px;
+		height:20px;
+		
+		transition: all 0.2s;
+		-moz-transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+		-o-transition: all 0.2s;
+	}
+	.CheckboxStyle input[type="checkbox"]:checked + label:before {
+		border-color:#FA7B33;
+		border-width:0 2px 2px 0;
+		width: 8px;
+		height: 16px;
+		top:7px;
+		left: 7px;
+		
+		-moz-transform: rotate(31deg);
+		-ms-transform: rotate(31deg);
+		-webkit-transform: rotate(31deg);
+		transform: rotate(31deg);
+	}
+
+	.button {
+    background-color: #FA7B33; /* orange */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	}
+
+	.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+	}
+	
+</style>
+</head>
+<body>
+<div class="title-box">
+	<div class="fontText">나의 유방암 발생 위험도는?</div>
+	유방암의 초기에는 아무런 증상이 없습니다. 그러나 종양이 자라면서 멍울이 만져지고, 유방의 모양과 크기가 변하게 됩니다. 유두에서 맑은 액체 혹은 혈액 같은 분비물이 나오는 것도 의심할 수 있는 증상입니다. 특히 가까운 가족 중 유방암 환자가 있다면 규칙적인 자가검진과 함께 유방암 조기발견을 위한 정기검진이 꼭 필요합니다.<p>
+</div>
+
+1.	가족이나 가까운 친척(할머니, 어머니, 자매, 이모) 중에 유방암 진단을 받은 사람이 있었습니까?<br>
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer1_1" name="group1" value="6" onchange="change(this.id)"/>
+    <label for="answer1_1">2명 이상 </label>
+    <input type="radio" id="answer1_2" name="group1" value="3" onchange="change(this.id)"/>
+    <label for="answer1_2">1명</label>
+    <input type="radio" id="answer1_3" name="group1" value="0" onchange="change(this.id)"/>
+    <label for="answer1_3">없음</label>
+</form>	
+<p>
+2.	가족이나 가까운 친척 중에 유방암 진단을 받은 사람이 있다면, 진단을 받았을 당시 나이가 55세 이전이었습니까? <br>
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer2_1" name="group2" value="2"/>
+    <label for="answer2_1" id="answer2_1_label">예</label>
+    <input type="radio" id="answer2_2" name="group2" value="0"/>
+    <label for="answer2_2">아니오</label>
+ </form>	
+<p>
+3.	가족이나 가까운 친척(할머니, 어머니, 자매, 이모) 중에 난소암 진단을 받은 사람이 있었습니까?<br>
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer3_1" name="group3" value="6" onchange="change(this.id)"/>
+    <label for="answer3_1">2명 이상 </label>
+    <input type="radio" id="answer3_2" name="group3" value="3" onchange="change(this.id)"/>
+    <label for="answer3_2">1명</label>
+    <input type="radio" id="answer3_3" name="group3" value="0" onchange="change(this.id)"/>
+    <label for="answer3_3">없음</label>
+</form>	
+<p>
+4.	가족이나 가까운 친척 중에 난소암 진단을 받은 사람이 있다면, 진단을 받았을 당시 나이가 50세 이전이었습니까? <br>
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer4_1" name="group4" value="3"/>
+    <label for="answer4_1" id="answer4_1_label">예</label>
+    <input type="radio" id="answer4_2" name="group4" value="0"/>
+    <label for="answer4_2">아니요</label>
+</form>	
+<p>
+5.	가족이나 가까운 친척(할머니, 어머니, 자매, 이모) 중에 대장암 진단을 받은 사람이 있었습니까? <br>
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer5_1" name="group5" value="5" onchange="change(this.id)"/>
+    <label for="answer5_1">2명 이상 </label>
+    <input type="radio" id="answer5_2" name="group5" value="2" onchange="change(this.id)"/>
+    <label for="answer5_2">1명</label>
+    <input type="radio" id="answer5_3" name="group5" value="0" onchange="change(this.id)"/>
+    <label for="answer5_3">없음</label>
+</form>	
+<p>
+6.	가족이나 가까운 친척 중에 대장암 진단을 받은 사람이 있다면, 진단을 받았을 당시 나이가 50세 이전이었습니까? <br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer6_1" name="group6" value="2" />
+    <label for="answer6_1" id="answer6_1_label">예</label>
+    <input type="radio" id="answer6_2" name="group6" value="0" />
+    <label for="answer6_2">아니요</label>
+</form>	
+<p>
+7.	가까운 가족 중 자궁내막암 진단을 받은 사람이 있었습니까?<br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer7_1" name="group7" value="2"/>
+    <label for="answer7_1">예</label>
+    <input type="radio" id="answer7_2" name="group7" value="0"/>
+    <label for="answer7_2">아니오</label>
+ </form>	
+<p>
+8.	현재 만 나이가 어떻게 되십니까? <br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer8_1" name="group8" value="1"/>
+    <label for="answer8_1">20-29세</label>
+    <input type="radio" id="answer8_2" name="group8" value="2"/>
+    <label for="answer8_2">30-39세</label>
+    <input type="radio" id="answer8_3" name="group8" value="3"/>
+    <label for="answer8_3">40-49세</label>
+    <input type="radio" id="answer8_4" name="group8" value="4"/>
+    <label for="answer8_4">50세 이상</label>
+</form>	
+<p>
+9.	현재 흡연을 하고 계십니까? <br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer9_1" name="group9" value="1"/>
+    <label for="answer9_1">예</label>
+    <input type="radio" id="answer9_2" name="group9" value="0"/>
+    <label for="answer9_2">아니요</label>
+</form>	
+<p>
+10.	평소 식습관은 어떠한 편입니까? <br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer10_1" name="group10" value="0"/>
+    <label for="answer10_1">저지방에서 보통 사이(기름기가 적고, 채소, 과일 위주의 식사)</label>
+    <input type="radio" id="answer10_2" name="group10" value="1"/>
+    <label for="answer10_2">고지방 식이(육류와 같이 기름기가 많은 음식을 주로 먹음)</label>
+</form>	
+<p>	
+11.	첫 생리를 언제 시작하셨습니까? <br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer11_1" name="group11" value="2"/>
+    <label for="answer11_1">9-11세</label>
+    <input type="radio" id="answer11_2" name="group11" value="1"/>
+    <label for="answer11_2">12-14세</label>
+    <input type="radio" id="answer11_3" name="group11" value="0"/>
+    <label for="answer11_3">15세 이상</label>
+</form>	
+<p>
+12.	첫 출산은 언제 하셨습니까?<br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer12_1" name="group12" value="-1"/>
+    <label for="answer12_1">29세 미만</label>
+    <input type="radio" id="answer12_2" name="group12" value="1"/>
+    <label for="answer12_2">30세 이후</label>
+    <input type="radio" id="answer12_3" name="group12" value="0"/>
+    <label for="answer12_3">아직 출산한 적 없음</label>
+</form>	
+<p>
+13.	폐경이 지나신 경우, 현재 호르몬대체요법을 받고 계십니까?  <br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer13_1" name="group13" value="1" onchange="change(this.id)"/>
+    <label for="answer13_1">예</label>
+    <input type="radio" id="answer13_2" name="group13" value="0" onchange="change(this.id)"/>
+    <label for="answer13_2">아니오</label>
+</form>	
+<p>
+14.	호르몬 대체 요법을 받고 있다면, 얼마나 오래 받으셨습니까?  <br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer14_1" name="group14" value="0"/>
+    <label for="answer14_1" id="answer14_1_label">5년 이하</label>
+    <input type="radio" id="answer14_2" name="group14" value="1"/>
+    <label for="answer14_2">5-9년</label>
+    <input type="radio" id="answer14_3" name="group14" value="2"/>
+    <label for="answer14_3">10년 이상</label>
+</form>	
+<p>	
+<button id="btn" class="button" style="width:100%;" onclick="btnClick();">결과 보기</button>	
+<script type="text/javascript">
+	
+	function change(id)
+	{
+		if(id == 'answer1_3')
+		{
+			document.getElementById('answer2_1').checked = true;
+			document.getElementById('answer2_1_label').innerText = '해당사항 없음';
+			document.getElementById('answer2_1').value = '0';
+
+			document.getElementById('answer2_1').disabled = true;
+			document.getElementById('answer2_2').disabled = true;
+		}
+		else if(id == 'answer1_1' || id == 'answer1_2')
+		{
+			document.getElementById('answer2_1').checked = false;
+			document.getElementById('answer2_1_label').innerText = '예';
+			document.getElementById('answer2_1').value = '2';
+
+			document.getElementById('answer2_1').disabled = false;
+			document.getElementById('answer2_2').disabled = false;
+		}
+		else if(id == 'answer3_3')
+		{
+			document.getElementById('answer4_1').checked = true;
+			document.getElementById('answer4_1_label').innerText = '해당사항 없음';
+			document.getElementById('answer4_1').value = '0';
+
+			document.getElementById('answer4_1').disabled = true;
+			document.getElementById('answer4_2').disabled = true;
+		}
+		else if(id == 'answer3_1' || id == 'answer3_2')
+		{
+			document.getElementById('answer4_1').checked = false;
+			document.getElementById('answer4_1_label').innerText = '예';
+			document.getElementById('answer4_1').value = '3';
+
+			document.getElementById('answer4_1').disabled = false;
+			document.getElementById('answer4_2').disabled = false;
+		}
+		else if(id == 'answer5_3')
+		{
+			document.getElementById('answer6_1').checked = true;
+			document.getElementById('answer6_1_label').innerText = '해당사항 없음';
+			document.getElementById('answer6_1').value = '0';
+
+			document.getElementById('answer6_1').disabled = true;
+			document.getElementById('answer6_2').disabled = true;
+		}
+		else if(id == 'answer5_1' || id == 'answer5_2')
+		{
+			document.getElementById('answer6_1').checked = false;
+			document.getElementById('answer6_1_label').innerText = '예';
+			document.getElementById('answer6_1').value = '2';
+
+			document.getElementById('answer6_1').disabled = false;
+			document.getElementById('answer6_2').disabled = false;
+		}
+
+
+		else if(id == 'answer13_2')
+		{
+			document.getElementById('answer14_1').checked = true;
+			document.getElementById('answer14_1_label').innerText = '해당사항 없음';
+			document.getElementById('answer14_1').value = '0';
+
+			document.getElementById('answer14_1').disabled = true;
+			document.getElementById('answer14_2').disabled = true;
+			document.getElementById('answer14_3').disabled = true;
+		}
+		else if(id == 'answer13_1')
+		{
+			document.getElementById('answer14_1').checked = false;
+			document.getElementById('answer14_1_label').innerText = '5년 이하';
+			document.getElementById('answer14_1').value = '0';
+
+			document.getElementById('answer14_1').disabled = false;
+			document.getElementById('answer14_2').disabled = false;
+			document.getElementById('answer14_3').disabled = false;
+		}
+
+	}
+
+	function btnClick()
+	{
+		var sum = 0;
+		// radio
+		var form = document.forms;
+		for(var i = 1; i <= form.length; i++)
+		{
+			var isCheck = false;
+			var radioBox = document.getElementsByName('group' + i);
+			for(var j=0; j < radioBox.length; j++)
+			{
+				if(radioBox[j].checked == true)
+				{
+					sum = Number(sum) + Number(radioBox[j].value);
+					isCheck = true;
+					break;
+				}
+			}
+			if(!isCheck)
+			{
+				alert(i + "번 설문을 체크해 주세요");
+				return;
+			}
+		}
+		
+		// 위험지수
+		if(document.getElementById('answer1_1').checked == true || document.getElementById('answer1_2').checked == true
+			|| document.getElementById('answer3_1').checked == true || document.getElementById('answer3_2').checked == true)
+		{
+			sum += Number(sum) + Number(5);
+		}
+
+		// android
+		window.HybridApp.sendSum(8, sum);
+		// ios
+		// window.location="ioscall://sendSum?no=8" + "&sum=" + sum;
+	};
+
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

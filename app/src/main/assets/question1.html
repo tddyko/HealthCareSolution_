@@ -1,0 +1,416 @@
+<html>
+<head>
+<style type="text/css">
+	body {
+		background:#fff;
+		font-family: Arial, sans-serif;
+		font-size:16px;
+		color: #22222;
+		line-height: 150%;
+		padding: 15px;
+	}
+	.fontText{
+		color: #FA7B33;
+		font-weight: bold;
+	}
+	.title-box{
+		background: #f2f2f2;
+		color: #9e9e9e;
+		margin-left: -23px;
+		margin-right: -23px;
+		margin-top: -30px;
+		margin-bottom: 20px;
+		padding: 16px;
+		padding-top: 30px;
+
+	}
+	.RadioStyle input[type="radio"] {
+		display:none;
+	}
+	.RadioStyle label {
+		display:block;
+		position:relative;
+		padding:10px 5px 10px 35px;
+		cursor:pointer;
+		color: #FA7B33;
+		margin-top: 10px;
+	}
+	.RadioStyle label:before {
+		content:'';
+		position:absolute;
+		top:5px;
+		left:0;
+		background:#fff;
+		border:2px solid #ddd;
+		width:20px;
+		height:20px;
+		
+		transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		-webkit-transition: all 0.3s;
+		-o-transition: all 0.3s;
+	}
+	.RadioStyle label:after {
+		content:'';
+		background:#FA7B33;
+		position:absolute;
+		top:5px;
+		left:0;
+		width:24px;
+		height:24px;
+		opacity: 0;
+		filter: alpha(opacity=0);
+	
+		transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		-webkit-transition: all 0.3s;
+		-o-transition: all 0.3s;
+	}
+	.RadioStyle input[type="radio"]:checked + label:before { 
+		border-color:#FA7B33;
+	}
+	.RadioStyle input[type="radio"]:checked + label:after {
+		opacity: 1;
+		filter: alpha(opacity=100);
+		width:12px;
+		height:12px;
+		top: 11px;
+  		left: 6px;
+	}
+	
+
+	.CheckboxStyle input[type="checkbox"] {
+		display:none;
+	}
+	.CheckboxStyle label {
+		display:block;
+		position:relative;
+		padding:10px 5px 10px 35px;
+		cursor:pointer;
+		color: #FA7B33;
+	}
+	.CheckboxStyle label:before {
+		content:'';
+		position:absolute;
+		top:5px;
+		left:0;
+		background:#fff;
+		border:2px solid #ddd;
+		width:20px;
+		height:20px;
+		
+		transition: all 0.2s;
+		-moz-transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+		-o-transition: all 0.2s;
+	}
+	.CheckboxStyle input[type="checkbox"]:checked + label:before {
+		border-color:#FA7B33;
+		border-width:0 2px 2px 0;
+		width: 8px;
+		height: 16px;
+		top:7px;
+		left: 7px;
+		
+		-moz-transform: rotate(31deg);
+		-ms-transform: rotate(31deg);
+		-webkit-transform: rotate(31deg);
+		transform: rotate(31deg);
+	}
+
+	.button {
+    background-color: #FA7B33; /* orange */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	}
+
+	.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+	}
+	
+</style>
+</head>
+<body>
+<div class="title-box">
+	<div class="fontText">나의 골다공증 발생 위험도는?</div>
+	골다공증이란 나이가 들면서 뼈의 구성 성분이 점차 자연 소실되면서 뼛속에 많은 구멍이 생기고 약해져서 가벼운 충격에도 쉽게 골절되는 질환을 말합니다. 많은 사람들이 골다공증의 증상이 있는 것으로 추정되고 있는데, 실제로 70세 이상의 여성 2명 중 1명, 남성 5명중 1명이 골다공증과 관련된 골절을 경험하고 있다고 합니다.<p>
+	<p style="font-weight:bold;">아래와 같은 설문을 통하여, 당신에게도 발생할 수 있는 골다공증의 발생 위험도를 알아봅시다.</p>
+</div>
+
+1.	가까운 가족 (할머니, 어머니, 자매, 고모, 이모)		
+중에 골다공증 진단을 받은 분이 있었습니까?<br>
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer1_1" name="group1" value="1"/>
+    <label for="answer1_1">예</label>
+    <input type="radio" id="answer1_2" name="group1" value="0"/>
+    <label for="answer1_2">아니요</label>
+</form>	
+<p>
+2.	현재 나이는 어떻게 되십니까(만 나이로)?<br>
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer2_1" name="group2" value="0"/>
+    <label for="answer2_1">20~39세</label>
+    <input type="radio" id="answer2_2" name="group2" value="2"/>
+    <label for="answer2_2">40~54세</label>
+    <input type="radio" id="answer2_3" name="group2" value="3"/>
+    <label for="answer2_3">55세 이상</label>
+</form>	
+<p>
+3.	마른 체형에 속하십니까?<br>
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer3_1" name="group3" value="2"/>
+    <label for="answer3_1">예</label>
+    <input type="radio" id="answer3_2" name="group3" value="0"/>
+    <label for="answer3_2">아니요</label>
+</form>	
+<p>
+4.	귀하의 신발사이즈는 230 mm 이하입니까?<br>
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer4_1" name="group4" value="2"/>
+    <label for="answer4_1">예</label>
+    <input type="radio" id="answer4_2" name="group4" value="0"/>
+    <label for="answer4_2">아니요</label>
+</form>	
+<p>
+5.	폐경하셨습니까?<br>
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer5_1" name="group5" value="2" onchange="change(this.id)"/>
+    <label for="answer5_1">예</label>
+    <input type="radio" id="answer5_2" name="group5" value="0" onchange="change(this.id)" />
+    <label for="answer5_2">아니요</label>
+</form>	
+<p>
+6.	만일 폐경을 하셨다면, 만40세 이전에 난소적출이나 항암요법 혹은 방사선 요법을 받았기 때문에 폐경이 되셨습니까?<br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer6_1" name="group6" value="3"/>
+    <label for="answer6_1">예</label>
+    <input type="radio" id="answer6_2" name="group6" value="0"/>
+    <label for="answer6_2">아니요</label>
+</form>	
+<p>
+7.	6번 문항에서 “예”에 해당될 경우, 폐경 이후 여성 호르몬 치료요법을 받으셨습니까? <br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer7_1" name="group7" value="-3"/>
+    <label for="answer7_1">예</label>
+    <input type="radio" id="answer7_2" name="group7" value="0"/>
+    <label for="answer7_2">아니요</label>
+</form>	
+<p>
+8.	나이가 들면서, 키가 줄어들었습니까?<br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer8_1" name="group8" value="2"/>
+    <label for="answer8_1">예</label>
+    <input type="radio" id="answer8_2" name="group8" value="0"/>
+    <label for="answer8_2">아니요</label>
+</form>	
+<p>
+9.	아래에 있는 질병을 진단받으신 적이 있습니까(해당질병에 체크해주세요)?<br> 
+<form name="CheckboxStyle" class="CheckboxStyle">
+	<input type="checkbox" id="answer9_1" name="ck1" value="1"/>
+    <label for="answer9_1">부갑상선 기능항진증</label>
+    <input type="checkbox" id="answer9_2" name="ck2" value="1"/>
+    <label for="answer9_2">프로락틴 과다증</label>
+    <input type="checkbox" id="answer9_3" name="ck3" value="1"/>
+    <label for="answer9_3">간 질환</label>
+    <input type="checkbox" id="answer9_4" name="ck4" value="1"/>
+    <label for="answer9_4">쿠씽씨 병</label>
+</form>	
+<p>  
+10.	천식이나 관절염, 혹은 암 때문에 갑상선약이나 부신피질호르몬제를 복용하신 적이 있습니까?<br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer10_1" name="group10" value="3"/>
+    <label for="answer10_1">예</label>
+    <input type="radio" id="answer10_2" name="group10" value="0"/>
+    <label for="answer10_2">아니요</label>
+</form>	
+<p>
+11.	귀하는 지나치게 다이어트를 하셨거나 식이장애를 겪으신 적이 있습니까? <br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer11_1" name="group11" value="1"/>
+    <label for="answer11_1">예</label>
+    <input type="radio" id="answer11_2" name="group11" value="0"/>
+    <label for="answer11_2">아니요</label>
+</form>	
+<p>
+
+12.	유제품를 드시면 설사를 하거나 소화를 잘 시키지 못하십니까?	<br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer12_1" name="group12" value="1"/>
+    <label for="answer12_1">예</label>
+    <input type="radio" id="answer12_2" name="group12" value="0"/>
+    <label for="answer12_2">아니요</label>
+</form>	
+<p>
+13.	고칼슘 식사나 낙농식품(우유, 치즈 등)을 자주 드십니까?<br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer13_1" name="group13" value="-1"/>
+    <label for="answer13_1">예</label>
+    <input type="radio" id="answer13_2" name="group13" value="0"/>
+    <label for="answer13_2">아니요</label>
+</form>	
+<p>
+14.	현재 흡연을 하십니까?	<br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer14_1" name="group14" value="1"/>
+    <label for="answer14_1">예</label>
+    <input type="radio" id="answer14_2" name="group14" value="0"/>
+    <label for="answer14_2">아니요</label>
+</form>	
+<p>
+15.	칼슘 보충제를 복용하십니까?<br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer15_1" name="group15" value="-1"/>
+    <label for="answer15_1">예</label>
+    <input type="radio" id="answer15_2" name="group15" value="0"/>
+    <label for="answer15_2">아니요</label>
+</form>	
+<p>
+16.	규칙적으로 운동을 하십니까?<br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer16_1" name="group16" value="-1" onchange="change(this.id)"/>
+    <label for="answer16_1">예</label>
+    <input type="radio" id="answer16_2" name="group16" value="1" onchange="change(this.id)"/>
+    <label for="answer16_2">아니요</label>
+</form>	
+<p>
+17.	규칙적으로 운동을 한다면, 적어도 일주일에 세 번 이상 운동을 하십니까?<br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer17_1" name="group17" value="-1"/>
+    <label for="answer17_1">예</label>
+    <input type="radio" id="answer17_2" name="group17" value="1"/>
+    <label for="answer17_2">아니요</label>
+</form>	
+<p>
+18.	가벼운 외상에 의해 골절을 입으신 적이 있습니까?<br> 
+<form name="RadioStyle" class="RadioStyle">
+	<input type="radio" id="answer18_1" name="group18" value="2"/>
+    <label for="answer18_1">예</label>
+    <input type="radio" id="answer18_2" name="group18" value="0"/>
+    <label for="answer18_2">아니요</label>
+</form>
+<button id="btn" class="button" style="width:100%;" onclick="btnClick();">결과 보기</button>	
+<script type="text/javascript">
+	
+	function change(id)
+	{
+		if(id == 'answer5_2')
+		{
+			document.getElementById('answer6_2').checked = true;
+			document.getElementById('answer7_2').checked = true;
+
+			document.getElementById('answer6_1').disabled = true;
+			document.getElementById('answer6_2').disabled = true;
+			document.getElementById('answer7_1').disabled = true;
+			document.getElementById('answer7_2').disabled = true;
+		}
+		else if(id == 'answer5_1')
+		{
+			document.getElementById('answer6_2').checked = false;
+			document.getElementById('answer7_2').checked = false;
+
+			document.getElementById('answer6_1').disabled = false;
+			document.getElementById('answer6_2').disabled = false;
+			document.getElementById('answer7_1').disabled = false;
+			document.getElementById('answer7_2').disabled = false;
+		}
+		else if(id == 'answer16_2')
+		{
+			document.getElementById('answer17_2').checked = true;
+			document.getElementById('answer17_2').value = '0';
+
+			document.getElementById('answer17_1').disabled = true;
+			document.getElementById('answer17_2').disabled = true;
+		}
+		else if(id == 'answer16_1')
+		{
+			document.getElementById('answer17_2').checked = false;
+
+			document.getElementById('answer17_1').disabled = false;
+			document.getElementById('answer17_2').disabled = false;
+			document.getElementById('answer17_2').value = '1';
+		}
+
+	}
+
+
+	function btnClick()
+	{
+		var sum = 0;
+		// radio
+		var form = document.forms;
+		for(var i = 1; i <= form.length; i++)
+		{
+			if(i == 9) continue;
+			var isCheck = false;
+			var radioBox = document.getElementsByName('group' + i);
+			for(var j=0; j < radioBox.length; j++)
+			{
+				if(radioBox[j].checked == true)
+				{
+					sum = Number(sum) + Number(radioBox[j].value);
+					isCheck = true;
+					break;
+				}
+			}
+			if(!isCheck)
+			{
+				alert(i + "번 설문을 체크해 주세요");
+				return;
+			}
+		}
+		//check box
+		var isSelect = false;
+		for(var a=1; a <= 4; a++)
+		{
+			var checkBox = document.getElementsByName('ck' + a);
+			if(checkBox.checked = true)
+			{
+				isSelect = true;
+				sum = Number(sum) + Number(checkBox[0].value);
+			}
+		}
+
+		// 위험지수
+		if(document.getElementById('answer8_1').checked == true)
+		{
+			sum += Number(sum) + Number(5);
+		}
+		if(isSelect)
+		{
+			sum += Number(sum) + Number(5);
+		}
+		// android
+		window.HybridApp.sendSum(1, sum);
+		// ios
+		// window.location="ioscall://sendSum?no=1" + "&sum=" + sum;
+	};
+
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

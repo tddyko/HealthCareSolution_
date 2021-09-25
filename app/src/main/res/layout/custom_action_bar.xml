@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/colorWhite">
+
+    <ImageButton
+        android:id="@+id/action_bar_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:background="@null"
+        android:padding="15dp"
+        android:src="@drawable/btn_back" />
+
+    <ImageView
+        android:id="@+id/action_bar_title_logo"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/icon_logo" />
+
+    <com.gchc.ing.component.CFontTextView
+        android:id="@+id/action_bar_title_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/app_name"
+        android:textColor="@color/colorNavyDark"
+        android:textSize="22sp"
+        android:visibility="gone"
+        app:font="@string/KelsonSansBold" />
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/action_bar_medi_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="17dp"
+            android:background="@drawable/icon_write_medi"
+            android:padding="15dp"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/action_bar_write_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="13dp"
+            android:background="@drawable/icon_write_new"
+            android:padding="15dp"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/action_bar_device_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="13dp"
+            android:background="@drawable/icon_device"
+            android:padding="15dp"
+            android:visibility="gone" />
+
+
+        <ImageButton
+            android:id="@+id/action_bar_bluetooth_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="13dp"
+            android:background="@drawable/icon_bluetooth"
+            android:padding="15dp"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/action_bar_setting_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/icon_setting_text"
+            android:padding="15dp" />
+
+        <com.gchc.ing.component.CFontButton
+            android:id="@+id/action_bar_save_btn"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/action_bar_save_btn"
+            android:text="@string/text_save"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/action_bar_block_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/block_color"
+        android:clickable="true"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/tbar"
+        android:layout_width="match_parent"
+        android:layout_height="10px"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/logolinear"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorMain" />
+
+</RelativeLayout>
